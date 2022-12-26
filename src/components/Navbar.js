@@ -1,5 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 export default function Navbar(props) {
     const alertfunction=()=>{
@@ -16,9 +22,9 @@ export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg bg-${props.mode}`} >
       <div className={`container-fluid `}>
-        <a className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} href="/">
+        <Link className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} to="/">
           {props.title}
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -33,9 +39,9 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className={`nav-link active text-${props.mode==='dark'?'light':'dark'}`} aria-current="page" href="/">
+              <Link className={`nav-link active text-${props.mode==='dark'?'light':'dark'}`} aria-current="page" to="/about">
                 {props.about}
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <a className={`nav-link text-${props.mode==='dark'?'light':'dark'}`} href="/">

@@ -3,13 +3,12 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import About from "./components/About";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
+// import About from "./components/About";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -50,7 +49,7 @@ function App() {
 
   return (
     <>
-    <Router>
+    {/* <Router> */}
 
     
       <Navbar
@@ -65,7 +64,7 @@ function App() {
       <Alert alert={alert} id="alerty" />
       
       <div className="container">
-      <Routes>
+      {/* <Routes>
           <Route path="/about" element= {<About />}/>
           
           
@@ -73,11 +72,11 @@ function App() {
           <Route path="/" element= {<TextForm title="Enter text below to be Processed...." mode={mode} showalert={showalert}/>}/>
           
           
-        </Routes>
-      
+        </Routes> */}
+      <TextForm title="Enter text below to be Processed...." mode={mode} showalert={showalert}/>
         
       </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }

@@ -1,19 +1,19 @@
 import React from "react";
 // import PropTypes from "prop-types";
-// import {
+import {
     
-//     Link
-//   } from "react-router-dom";
+    Link
+  } from "react-router-dom";
 
 export default function Navbar(props) {
    
   return (
     <nav className={`navbar navbar-expand-lg bg-${props.mode}`} >
       <div className={`container-fluid `}>
-        <a className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} href="#">
-        {/* <Link className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} to="/"> */}
+        {/* <a className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} href="#"> */}
+        <Link className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} to="/">
           {props.title}
-        </a>
+          </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -28,12 +28,12 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className={`nav-link active text-${props.mode==='dark'?'light':'dark'}`} aria-current="page" href="#">
+              {/* <a className={`nav-link active text-${props.mode==='dark'?'light':'dark'}`} aria-current="page" href="#">
                 {props.about}
-              </a>
-              {/* <Link className={`nav-link active text-${props.mode==='dark'?'light':'dark'}`} aria-current="page" to="/about">
+              </a> */}
+              <Link className={`nav-link active text-${props.mode==='dark'?'light':'dark'}`} aria-current="page" to="/about">
                 {props.about}
-              </Link> */}
+              </Link>
             </li>
             {/* <li className="nav-item">
               <a className={`nav-link text-${props.mode==='dark'?'light':'dark'}`} href="/">
@@ -62,8 +62,9 @@ export default function Navbar(props) {
               className="form-check-input"
               type="checkbox"
               role="switch"
-              id="flexSwitchCheckDefault"
-              onClick={props.togglemode1}
+              id="flexSwitchCheckDefault1"
+              onClick={()=>(props.togglemode("#2e382e"))}
+
              
             />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
@@ -75,8 +76,8 @@ export default function Navbar(props) {
               className="form-check-input"
               type="checkbox"
               role="switch"
-              id="flexSwitchCheckDefault"
-              onClick={props.togglemode}
+              id="flexSwitchCheckDefault2"
+              onClick={()=>(props.togglemode("#222f45"))}
               //now one thing that i understood was i was trying to call the alert function here with the togglefunction(which enables dark mode ) but somehow it is not possible i dont know why so instead of calling the alert function here only what i did was to call the function in the toggle function itself because i didn't had any choice to be precise
             />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">

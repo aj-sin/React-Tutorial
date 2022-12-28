@@ -56,18 +56,18 @@ export default function TextForm(props) {
           onChange={handleonchange}
         ></textarea>
       </div>
-      <button className="btn btn-primary" onClick={handleupclick}>Convert to Uppercase</button>
-      <button className="btn btn-danger mx-2" onClick={handlelcclick}>Convert to Uppercase</button>
-      <button className="btn btn-info mx-2" onClick={clear}>Clear Text</button>
-      <button className="btn btn-info mx-2" onClick={copy}>Copy Text</button>
-      <button className="btn btn-warning mx-2" onClick={removespaces}>Remove extra spaces</button>
+      <button disabled={text.length===0} className="btn btn-primary" onClick={handleupclick}>Convert to Uppercase</button>
+      <button disabled={text.length===0} className="btn btn-danger mx-2" onClick={handlelcclick}>Convert to Uppercase</button>
+      <button disabled={text.length===0} className="btn btn-info mx-2" onClick={clear}>Clear Text</button>
+      <button disabled={text.length===0} className="btn btn-info mx-2" onClick={copy}>Copy Text</button>
+      <button disabled={text.length===0} className="btn btn-warning mx-2" onClick={removespaces}>Remove extra spaces</button>
     </div>
     <div className={`container text-${props.mode==='dark'?'light':'dark'}`}>
         <h2>Your text Summary</h2>
-        <p>{text.split(" ").length -1} words and {text.length} characters</p>
-        <p>{(0.008*(text.split(" ").length-1)).toFixed(2)} Minutes to read</p>
+        <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
+        <p>{(0.008*(text.split(/\s+/).filter((element)=>{return element.length!==0}).length)).toFixed(2)} Minutes to read</p>
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{(text.length===0?"Nothing to preveiw":text)}</p>
     </div>
     </>
   );

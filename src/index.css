@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+.accordion-button:not(.collapsed)::after {
+  filter: invert(1);
+}
+.accordion-button::after {
+  filter: invert(1);}

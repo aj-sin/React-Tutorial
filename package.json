@@ -1,6 +1,6 @@
 {
-  "homepage": "https://aj-sin.github.io/React-Tutorial",
-  "name": "react-tutorial",
+  "homepage": "https://aj-sin.github.io/TextTutils",
+  "name": "text-utils",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

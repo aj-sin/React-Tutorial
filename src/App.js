@@ -122,7 +122,7 @@ function App() {
 
 
 
-            <Route path="/" element={<TextForm title="Enter text below to be Processed...." mode={mode} showalert={showalert} />} />
+            <Route path="/TextTutils" element={<TextForm title="Enter text below to be Processed...." mode={mode} showalert={showalert} />} />
 
 
           </Routes>

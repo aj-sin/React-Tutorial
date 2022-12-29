@@ -11,7 +11,7 @@ export default function Navbar(props) {
     <nav className={`navbar navbar-expand-lg bg-${props.mode}`} >
       <div className={`container-fluid `}>
         {/* <a className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} href="#"> */}
-        <Link className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} to="/">
+        <Link className={`navbar-brand text-${props.mode==='dark'?'light':'dark'}`} to="/TextTutils">
           {props.title}
           </Link>
         <button
